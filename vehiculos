@@ -1,0 +1,91 @@
+
+package com.mycompany.transportes;
+
+public class Transportes {
+
+    public static void main(String[] args) {
+        Moto m1= new Moto ("GIF 549", "SUSUKI", "ROJA");
+        Carro c1= new Carro ("PDU 6424", "CHEVROLET", "AZUL");
+        
+        m1.conducir ();
+        c1.conducir ();
+        
+        
+        System.out.println("Hello World!");
+    }
+}
+
+package com.mycompany.transportes;
+
+abstract  public class Vehiculos {
+    public String placa;
+    public String marca;
+    public String color;
+    private String Tipovehiculos;
+    
+    public Vehiculos (String placa, String marca, String color) {
+        this.placa = placa;
+        this.marca = marca;
+        this.color = color;
+        }
+        
+ 
+        
+    public String getTipovehiculos() {
+        return Tipovehiculos;
+        
+    }
+     public void setTipovehiculos (String Tipovehiculos) {
+         this.Tipovehiculos = Tipovehiculos;
+         
+     } 
+      public void Prender () {
+         System.out.println ("Prendido");
+         
+    }
+       public void Apagar () {
+         System.out.println ("Apagado");
+      
+    }
+       public void Mover () {
+         System.out.println ("Moverse");
+     }
+       }
+
+package com.mycompany.transportes;
+
+public class Moto  extends Vehiculos{
+
+    public Moto(String placa, String marca, String color) {
+        super(placa, marca, color);
+    }
+   
+    public void conducir (){
+        System.out.println ("Subete a la moto");
+            Prender(); 
+            Apagar();
+            Mover();
+         
+    
+        }
+    }
+    
+
+package com.mycompany.transportes;
+
+public class Carro  extends Vehiculos{
+    
+    public Carro(String placa, String marca, String color) {
+        super (placa, marca, color); 
+      
+    }
+    
+    public void conducir (){
+        System.out.println ("Subete al carro");
+            Prender(); 
+            Apagar();
+            Mover();
+         
+        }
+    }
+    
